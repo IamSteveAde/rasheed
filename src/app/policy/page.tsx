@@ -24,7 +24,7 @@ function PolicySection({ title, children }: SectionProps) {
       </button>
 
       {open && (
-        <div className="px-5 pb-6 pt-2 text-gray-700 leading-relaxed text-sm md:text-base">
+        <div className="px-5 pb-6 pt-2 text-gray-700 leading-relaxed text-sm md:text-base space-y-3">
           {children}
         </div>
       )}
@@ -37,7 +37,7 @@ export default function PoliciesPage() {
     <div className="min-h-screen bg-gray-50 py-20 px-6">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold text-gray-900 text-center mb-10">
-          Chuks AI – Website Policies
+          Chuks AI – Website Policies & Legal Information
         </h1>
 
         <div className="space-y-6">
@@ -45,122 +45,129 @@ export default function PoliciesPage() {
           {/* 1.0 TERMS OF SERVICE */}
           <PolicySection title="1.0 Terms of Service">
             <p>
-              Chuks AI is a paid AI-powered service designed to assist users with
-              automated tools, insights, and content generation. By accessing the
-              platform, you agree to abide by the following terms.
+              Chuks AI is a paid, AI-powered digital service designed to assist users
+              with automation, content generation, and decision-support tools.
+              By accessing or using the platform, you agree to be legally bound by
+              these Terms of Service.
             </p>
 
-            <h3 className="font-semibold mt-4">1.1 Overview</h3>
+            <h3 className="font-semibold mt-4">1.1 Service Overview</h3>
             <p>
-              Chuks AI provides automated digital services for personal and business
-              use. All features require payment before access is granted.
+              Chuks AI provides automated AI-driven outputs for personal and business
+              use. Access to features is granted only after successful payment.
+              We reserve the right to modify, suspend, or discontinue any part of
+              the service at our discretion.
             </p>
 
             <h3 className="font-semibold mt-4">1.2 Eligibility</h3>
             <ul className="list-disc pl-6">
-              <li>You must be 18 years old or older.</li>
-              <li>The service is available exclusively within Nigeria.</li>
+              <li>Users must be at least 18 years of age.</li>
+              <li>The service is currently intended for use within Nigeria.</li>
             </ul>
 
             <h3 className="font-semibold mt-4">1.3 Account Responsibility</h3>
             <p>
-              You are responsible for maintaining the confidentiality of your
-              account and ensuring your information remains accurate.
+              You are solely responsible for maintaining the confidentiality of
+              your account credentials and for all activities carried out under
+              your account. Chuks AI will not be liable for unauthorized access
+              resulting from user negligence.
             </p>
 
             <h3 className="font-semibold mt-4">1.4 Acceptable Use</h3>
-            <p>Users may not use Chuks AI for:</p>
+            <p>Users must not use Chuks AI for:</p>
             <ul className="list-disc pl-6">
-              <li>Fraud, impersonation, or illegal activities</li>
-              <li>Harassment, hate speech, or abusive behaviour</li>
-              <li>Cybersecurity attacks or malware generation</li>
-              <li>Training competing AI systems using Chuks AI output</li>
+              <li>Fraud, impersonation, or unlawful activities</li>
+              <li>Harassment, hate speech, or abusive conduct</li>
+              <li>Malware creation, hacking, or cybersecurity attacks</li>
+              <li>Training, reverse-engineering, or replicating competing AI systems</li>
             </ul>
 
             <h3 className="font-semibold mt-4">1.5 AI Limitations</h3>
             <p>
-              AI-generated content may be incomplete, incorrect, or unsuitable for
-              professional use. Users must exercise independent judgment.
+              AI-generated outputs may be inaccurate, incomplete, or inappropriate
+              for specific professional or regulated use cases. Users must apply
+              independent judgment and seek professional advice where necessary.
             </p>
 
             <h3 className="font-semibold mt-4">1.6 Intellectual Property</h3>
             <p>
-              Chuks AI owns all platform technology. Users may use outputs but may
-              not resell or replicate the service.
+              All platform technology, systems, and branding belong to Chuks AI.
+              Users retain rights to their generated content but may not resell,
+              sublicense, or replicate the service itself.
             </p>
 
             <h3 className="font-semibold mt-4">1.7 Suspension & Termination</h3>
             <p>
-              Violations of these terms may result in account suspension without
-              refund.
+              We reserve the right to suspend or terminate accounts that violate
+              these terms, without notice or refund.
             </p>
 
             <h3 className="font-semibold mt-4">1.8 Governing Law</h3>
-            <p>These terms are governed by Nigerian law.</p>
+            <p>
+              These terms are governed by and construed in accordance with the
+              laws of the Federal Republic of Nigeria.
+            </p>
           </PolicySection>
 
           {/* 2.0 PRIVACY POLICY */}
           <PolicySection title="2.0 Privacy Policy">
             <p>
-              Chuks AI is committed to protecting your personal data and ensuring
-              compliance with the Nigeria Data Protection Act (NDPA).
+              Chuks AI is committed to protecting user privacy and complying with
+              the Nigeria Data Protection Act (NDPA).
             </p>
 
-            <h3 className="font-semibold mt-4">2.1 Data We Collect</h3>
+            <h3 className="font-semibold mt-4">2.1 Data Collected</h3>
             <ul className="list-disc pl-6">
-              <li>Name, email, phone number</li>
+              <li>Personal identification information</li>
+              <li>Contact details such as email and phone number</li>
               <li>Payment and billing information</li>
-              <li>Usage logs and interaction history</li>
-              <li>Device and browser data</li>
+              <li>Usage logs, prompts, and interaction data</li>
+              <li>Device and browser information</li>
             </ul>
 
-            <h3 className="font-semibold mt-4">2.2 How We Use Data</h3>
+            <h3 className="font-semibold mt-4">2.2 Use of Data</h3>
             <ul className="list-disc pl-6">
-              <li>Deliver and improve services</li>
-              <li>Process payments and provide support</li>
-              <li>Detect fraud and enhance security</li>
+              <li>Service delivery and improvement</li>
+              <li>Customer support and communication</li>
+              <li>Fraud prevention and security monitoring</li>
             </ul>
 
             <h3 className="font-semibold mt-4">2.3 Data Storage & Security</h3>
             <p>
-              We use industry-grade security systems and restrict access to
-              authorized personnel only.
+              We implement commercially reasonable security measures to protect
+              user data. However, no system can be guaranteed to be 100% secure.
             </p>
 
             <h3 className="font-semibold mt-4">2.4 Data Sharing</h3>
-            <p>We do not sell user data. Limited sharing may occur with:</p>
-            <ul className="list-disc pl-6">
-              <li>Payment processors</li>
-              <li>Cloud providers</li>
-              <li>Legal authorities when required</li>
-            </ul>
+            <p>
+              We do not sell user data. Limited sharing may occur with trusted
+              third parties such as payment processors, cloud infrastructure
+              providers, or legal authorities when required by law.
+            </p>
 
             <h3 className="font-semibold mt-4">2.5 User Rights</h3>
             <p>
-              Users may request access, correction, deletion, or account closure via
-              email at: <strong>[Insert Support Email]</strong>
+              Users may request access, correction, deletion, or account closure
+              by contacting: <strong>support@chuks.ai</strong>
             </p>
-
-            <h3 className="font-semibold mt-4">2.6 Regulatory Compliance</h3>
-            <p>Chuks AI complies with the NDPA and related Nigerian regulations.</p>
           </PolicySection>
 
           {/* 3.0 PRICING & BILLING */}
           <PolicySection title="3.0 Pricing, Billing & Subscription Policy">
-            <h3 className="font-semibold">3.1 Payments</h3>
-            <p>All services are paid in Nigerian Naira (₦) via approved payment gateways.</p>
-
-            <h3 className="font-semibold mt-4">3.2 Subscriptions</h3>
-            <p>Plans may be monthly, annual, or usage-based. Renewals occur automatically.</p>
-
-            <h3 className="font-semibold mt-4">3.3 Cancellation</h3>
             <p>
-              Users may cancel at any time. Cancellation prevents future charges but
-              does not refund the current billing cycle.
+              All payments are processed in Nigerian Naira (₦) through approved
+              payment gateways.
             </p>
 
-            <h3 className="font-semibold mt-4">3.4 Price Changes</h3>
-            <p>We may adjust pricing with advance notice on the platform.</p>
+            <p>
+              Subscription plans may be monthly, annual, or usage-based and renew
+              automatically unless cancelled before the renewal date.
+            </p>
+
+            <p>
+              Cancellation stops future charges but does not entitle the user to
+              refunds for the current billing period.
+            </p>
           </PolicySection>
 
           {/* 4.0 REFUND POLICY */}
@@ -170,52 +177,70 @@ export default function PoliciesPage() {
               non-refundable once access is granted.
             </p>
 
-            <p className="mt-3">Refunds may be issued only for:</p>
-            <ul className="list-disc pl-6">
-              <li>Duplicate payments</li>
-              <li>Confirmed billing errors</li>
-            </ul>
+            <p>
+              Refunds may only be issued for confirmed billing errors or duplicate
+              charges, subject to review.
+            </p>
 
-            <p className="mt-3">
-              Refund requests must be submitted within 7 days to:
-              <strong> [Insert Support Email]</strong>
+            <p>
+              Requests must be submitted within 7 days to:
+              <strong> support@chuks.ai</strong>
             </p>
           </PolicySection>
 
-          {/* 5.0 ACCEPTABLE USE POLICY */}
+          {/* 5.0 ACCEPTABLE USE */}
           <PolicySection title="5.0 Acceptable Use Policy">
-            <p>Users must interact with Chuks AI responsibly and ethically.</p>
+            <p>
+              Users must use Chuks AI responsibly, ethically, and in compliance
+              with all applicable laws.
+            </p>
 
-            <h3 className="font-semibold mt-3">Prohibited Activities:</h3>
             <ul className="list-disc pl-6">
-              <li>Harmful, misleading, or abusive content generation</li>
-              <li>Political manipulation or misinformation</li>
-              <li>Financial, medical, or legal advice presented as professional</li>
-              <li>Any activity violating Nigerian law</li>
+              <li>No harmful or misleading content</li>
+              <li>No political manipulation or misinformation</li>
+              <li>No professional advice presented as authoritative</li>
+              <li>No illegal or unethical activities</li>
             </ul>
           </PolicySection>
 
           {/* 6.0 AI ETHICS */}
-          <PolicySection title="6.0 AI Ethics & Responsible Use Policy">
-            <p>Chuks AI is committed to safe, transparent, and responsible AI use.</p>
-
-            <p className="mt-3">
-              AI outputs are informational and may contain errors. Users must apply
-              human judgment and remain responsible for all decisions made using AI
-              content.
+          <PolicySection title="6.0 AI Ethics & Responsible Use">
+            <p>
+              Chuks AI promotes responsible AI usage. All outputs are informational
+              and must not replace qualified human judgment.
             </p>
           </PolicySection>
 
           {/* 7.0 DISCLAIMER */}
-          <PolicySection title="7.0 Disclaimer">
+          <PolicySection title="7.0 Disclaimer & Limitation of Liability">
             <p>
-              Chuks AI is provided “as-is” without guarantees of accuracy,
-              completeness, or suitability. We are not liable for damages or losses
-              resulting from the use of AI-generated content.
+              Chuks AI is provided on an “as-is” and “as-available” basis. We make
+              no warranties regarding accuracy, reliability, or suitability.
+            </p>
+
+            <p>
+              To the fullest extent permitted by law, Chuks AI shall not be liable
+              for any direct, indirect, incidental, or consequential damages
+              arising from the use of the platform.
             </p>
           </PolicySection>
 
-         
+          {/* 8.0 CONTACT */}
+          <PolicySection title="8.0 Contact & Support">
+            <p>
+              For questions regarding these policies, account issues, billing
+              inquiries, or legal concerns, please contact our support team.
+            </p>
+
+            <p>
+              📧 <strong>Email:</strong> support@chuks.ai
+            </p>
+
+            <p>
+              We aim to respond to all legitimate requests within a reasonable
+              timeframe.
+            </p>
+          </PolicySection>
 
         </div>
       </div>
