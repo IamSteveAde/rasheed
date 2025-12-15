@@ -305,18 +305,7 @@ export default function AdvanceSearch({ category }: { category?: string }) {
                                     </button>
                                 </div>
                             </div>
-                            {filteredProperties.length > 0 ?
-                                <div className={` ${viewMode === 'grid' ? 'grid sm:grid-cols-2' : 'flex flex-col'} gap-6 px-4`}>
-                                    {(sortOrder ? sortedProperties : properties).map((data: any, index: any) => (
-                                        <PropertyCard key={index} property={data} viewMode={viewMode} />
-                                    ))}
-                                </div>
-                                :
-                                <div className='flex flex-col gap-5 items-center justify-center pt-20'>
-                                    <Image src={getImgPath("/images/not-found/no-results.png")} alt='no-result' width={100} height={100} />
-                                    <p className='text-gray'>No result found</p>
-                                </div>
-                            }
+                           
                         </div>
                     </div>
                 </div>
