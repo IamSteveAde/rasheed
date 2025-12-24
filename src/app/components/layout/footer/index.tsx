@@ -51,16 +51,17 @@ export default function Footer() {
                     How it Works
                   </Link>
                 </li>
+                 <li>
+                  <Link href="/#features" className="text-gray-400 hover:text-primary transition">
+                    About
+                  </Link>
+                </li>
                 <li>
                   <Link href="/#services" className="text-gray-400 hover:text-primary transition">
                     Services
                   </Link>
                 </li>
-                <li>
-                  <Link href="/#features" className="text-gray-400 hover:text-primary transition">
-                    Features
-                  </Link>
-                </li>
+               
                 <li>
                   <Link href="/policy" className="text-gray-400 hover:text-primary transition">
                     Website Policies
