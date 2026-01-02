@@ -184,22 +184,44 @@ export default function Hero() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation Arrows */}
-      <div className="absolute inset-y-0 w-full flex items-center justify-between px-6 z-20">
-        <button
-          onClick={prev}
-          className="h-12 w-12 rounded-full bg-white/10 backdrop-blur text-white flex items-center justify-center hover:bg-white hover:text-black transition-all"
-        >
-          <ArrowLeft size={20} />
-        </button>
+      {/* ================= DESKTOP ARROWS ================= */}
+<div className="absolute inset-y-0 w-full hidden md:flex items-center justify-between px-6 z-20">
+  <button
+    onClick={prev}
+    aria-label="Previous slide"
+    className="h-12 w-12 rounded-full bg-white/10 backdrop-blur text-white flex items-center justify-center hover:bg-white hover:text-black transition-all"
+  >
+    <ArrowLeft size={20} />
+  </button>
 
-        <button
-          onClick={next}
-          className="h-12 w-12 rounded-full bg-white/10 backdrop-blur text-white flex items-center justify-center hover:bg-white hover:text-black transition-all"
-        >
-          <ArrowRight size={20} />
-        </button>
-      </div>
+  <button
+    onClick={next}
+    aria-label="Next slide"
+    className="h-12 w-12 rounded-full bg-white/10 backdrop-blur text-white flex items-center justify-center hover:bg-white hover:text-black transition-all"
+  >
+    <ArrowRight size={20} />
+  </button>
+</div>
+
+{/* ================= MOBILE ARROWS ================= */}
+<div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex md:hidden items-center gap-6 z-20">
+  <button
+    onClick={prev}
+    aria-label="Previous slide"
+    className="h-11 w-11 rounded-full bg-white/15 backdrop-blur text-white flex items-center justify-center active:scale-95 transition"
+  >
+    <ArrowLeft size={18} />
+  </button>
+
+  <button
+    onClick={next}
+    aria-label="Next slide"
+    className="h-11 w-11 rounded-full bg-white/15 backdrop-blur text-white flex items-center justify-center active:scale-95 transition"
+  >
+    <ArrowRight size={18} />
+  </button>
+</div>
+
 
       {/* Progress Bars */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-4 z-20">

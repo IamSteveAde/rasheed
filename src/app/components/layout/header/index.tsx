@@ -68,27 +68,17 @@ export default function Header() {
 
             {/* DESKTOP NAV */}
             <nav className="hidden md:flex items-center gap-10">
-              <NavItem onDark={onDark} href="/about">
-                About
-              </NavItem>
-              <NavItem onDark={onDark} href="/donate">
-                Donate
-              </NavItem>
-              <NavItem onDark={onDark} href="/volunteer">
-                Volunteer
-              </NavItem>
-              <NavItem onDark={onDark} href="/mentor">
-                Mentor
-              </NavItem>
-              <NavItem onDark={onDark} href="/partner">
-                Partner
-              </NavItem>
+              <NavItem onDark={onDark} href="/about">About</NavItem>
+              <NavItem onDark={onDark} href="/donate">Donate</NavItem>
+              <NavItem onDark={onDark} href="/volunteer">Volunteer</NavItem>
+              <NavItem onDark={onDark} href="/mentor">Mentor</NavItem>
+              <NavItem onDark={onDark} href="/partner">Partner</NavItem>
             </nav>
 
-            {/* MOBILE MENU BUTTON */}
+            {/* MOBILE TOGGLE BUTTON */}
             <button
-              aria-label="Open menu"
-              onClick={() => setMenuOpen(true)}
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              onClick={() => setMenuOpen((prev) => !prev)}
               className="
                 md:hidden z-50
                 h-11 w-11
@@ -101,7 +91,7 @@ export default function Header() {
                 transition hover:bg-white/30
               "
             >
-              <Menu size={18} />
+              {menuOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
           </div>
         </div>
@@ -110,24 +100,6 @@ export default function Header() {
       {/* ================= MOBILE MENU ================= */}
       {menuOpen && (
         <div className="fixed inset-0 z-40 bg-black/90 backdrop-blur-2xl">
-          {/* Close */}
-          <button
-            aria-label="Close menu"
-            onClick={() => setMenuOpen(false)}
-            className="
-              absolute top-6 right-6
-              h-11 w-11
-              rounded-full
-              flex items-center justify-center
-              backdrop-blur-xl
-              bg-white/10
-              border border-white/20
-            "
-          >
-            <X size={18} className="text-white" />
-          </button>
-
-          {/* Menu */}
           <nav className="h-full flex flex-col items-center justify-center">
             <MobileNavItem delay={0} href="/about" onClick={() => setMenuOpen(false)}>
               About Us
@@ -141,11 +113,7 @@ export default function Header() {
 
             <Divider />
 
-            <MobileNavItem
-              delay={2}
-              href="/volunteer"
-              onClick={() => setMenuOpen(false)}
-            >
+            <MobileNavItem delay={2} href="/volunteer" onClick={() => setMenuOpen(false)}>
               Volunteer
             </MobileNavItem>
 
@@ -157,11 +125,7 @@ export default function Header() {
 
             <Divider />
 
-            <MobileNavItem
-              delay={4}
-              href="/partner"
-              onClick={() => setMenuOpen(false)}
-            >
+            <MobileNavItem delay={4} href="/partner" onClick={() => setMenuOpen(false)}>
               Partner With Us
             </MobileNavItem>
           </nav>

@@ -108,28 +108,28 @@ export default function MentorSection() {
             </motion.div>
 
             {/* RIGHT — IMAGE SLIDER */}
-            <div className="lg:col-span-7 relative h-[520px] rounded-3xl overflow-hidden shadow-[0_60px_160px_rgba(0,0,0,0.45)]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={index}
-                  variants={fade}
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                  transition={{ duration: 1.2, ease: "easeInOut" }}
-                  className="absolute inset-0"
-                >
-                  <Image
-                    src={getImgPath(mentorImages[index])}
-                    alt="Mentorship in action"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-black/25" />
-                </motion.div>
-              </AnimatePresence>
-            </div>
+<div className="lg:col-span-7 relative h-[520px] rounded-3xl overflow-hidden shadow-[0_60px_160px_rgba(0,0,0,0.45)]">
+  {mentorImages.map((img, i) => (
+    <motion.div
+      key={img}
+      className="absolute inset-0"
+      initial={false}
+      animate={{ opacity: i === index ? 1 : 0 }}
+      transition={{ duration: 1.2, ease: "easeInOut" }}
+      style={{ zIndex: i === index ? 2 : 1 }}
+    >
+      <Image
+        src={getImgPath(img)}
+        alt="Mentorship in action"
+        fill
+        className="object-cover"
+        priority={i === 0}
+      />
+      <div className="absolute inset-0 bg-black/25" />
+    </motion.div>
+  ))}
+</div>
+
           </div>
         </div>
       </div>
