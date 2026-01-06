@@ -70,9 +70,9 @@ export default function Header() {
             <nav className="hidden md:flex items-center gap-10">
               <NavItem onDark={onDark} href="/about">About</NavItem>
               <NavItem onDark={onDark} href="/donate">Donate</NavItem>
-              <NavItem onDark={onDark} href="/volunteer">Volunteer</NavItem>
-              <NavItem onDark={onDark} href="/mentor">Mentor</NavItem>
               <NavItem onDark={onDark} href="/partner">Partner</NavItem>
+              <NavItem onDark={onDark} href="/blog">Blog and Case Studies</NavItem>
+              <NavItem onDark={onDark} href="/services">Our Services</NavItem>
             </nav>
 
             {/* MOBILE TOGGLE BUTTON */}

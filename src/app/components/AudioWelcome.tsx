@@ -31,7 +31,7 @@ export default function AudioWelcome() {
       {/* Audio Element */}
       <audio
         ref={audioRef}
-        src="/audio/welcome.m4a"
+        src="/audio/welcome.mp3"
         preload="auto"
       />
 
