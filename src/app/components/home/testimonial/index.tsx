@@ -1,132 +1,124 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
-import { Mail, Send } from "lucide-react";
+import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion'
+import { useEffect, useRef } from 'react'
 
-export default function ContactSection() {
+function Counter({ value }: { value: number }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+  const count = useMotionValue(0)
+  const rounded = useTransform(count, latest => Math.round(latest))
+
+  useEffect(() => {
+    if (isInView) {
+      animate(count, value, {
+        duration: 2.8,
+        ease: 'easeOut'
+      })
+    }
+  }, [isInView, value, count])
+
   return (
-    <section className="relative bg-white py-32">
-      <div className="container mx-auto px-6 lg:max-w-screen-xl">
-        <div className="grid gap-20 lg:grid-cols-12 items-start">
-          {/* LEFT — INTRO */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
+    <motion.span ref={ref} className="tabular-nums">
+      {rounded}
+    </motion.span>
+  )
+}
+
+export default function ImpactNumbersSection() {
+  return (
+    <section className="relative bg-[#FAFAFA] py-36 overflow-hidden" id='impact'>
+
+      {/* subtle ambient depth */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(194,164,93,0.06),transparent_45%)]" />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
+
+        {/* Header */}
+        <div className="max-w-3xl mb-20">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-5"
+            transition={{ duration: 1.2 }}
+            className="text-sm uppercase tracking-[0.3em] text-neutral-500 mb-8"
           >
-            <div className="flex items-center gap-3 text-black/60 mb-6">
-              <Mail size={18} />
-              <span className="text-[11px] tracking-[0.45em] uppercase">
-                Contact
-              </span>
-            </div>
+            Measured Impact
+          </motion.p>
 
-            <h2 className="text-4xl md:text-5xl font-light leading-tight text-black">
-              Contact Us
-            </h2>
-
-            <p className="mt-6 text-black/60 max-w-md leading-relaxed text-lg">
-              Drop us a line. Whether you’d like to donate, partner with us, or
-              simply make an enquiry, we’d love to hear from you.
-            </p>
-          </motion.div>
-
-          {/* RIGHT — FORM */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
+          <motion.h3
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.15, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-7"
+            transition={{ duration: 1.4 }}
+            className="text-3xl md:text-4xl font-light text-[#141414] leading-relaxed"
           >
-            <form className="rounded-3xl border border-black/5 p-10 shadow-[0_30px_80px_rgba(0,0,0,0.06)]">
-              <div className="grid gap-6">
-                {/* Name */}
-                <div>
-                  <label className="block text-xs tracking-wide uppercase text-black/50 mb-2">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Your full name"
-                    className="w-full rounded-xl border border-black/10 px-4 py-4 text-sm outline-none focus:border-[#5f3b86]"
-                  />
-                </div>
+            Impact is not claimed.  
+            <br />
+            It is demonstrated — quietly, over time.
+          </motion.h3>
+        </div>
 
-                {/* Email */}
-                <div>
-                  <label className="block text-xs tracking-wide uppercase text-black/50 mb-2">
-                    Email*
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    placeholder="you@example.com"
-                    className="w-full rounded-xl border border-black/10 px-4 py-4 text-sm outline-none focus:border-[#5f3b86]"
-                  />
-                </div>
+        {/* Metrics */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+          
+          <Metric
+            value={10}
+            suffix="+"
+            label="Years of Active Focus"
+          />
 
-                {/* Purpose */}
-                <div>
-                  <label className="block text-xs tracking-wide uppercase text-black/50 mb-2">
-                    Purpose of Contact
-                  </label>
-                  <select
-                    className="w-full rounded-xl border border-black/10 px-4 py-4 text-sm bg-white outline-none focus:border-[#5f3b86]"
-                  >
-                    <option value="">Select an option</option>
-                    <option value="donate">Donation Enquiry</option>
-                    <option value="partner">Partnership</option>
-                    <option value="volunteer">Volunteering</option>
-                    <option value="mentor">Mentorship</option>
-                    <option value="general">General Enquiry</option>
-                  </select>
-                </div>
+          <Metric
+            value={5}
+            suffix="+"
+            label="Business Ventures Engaged"
+          />
 
-                {/* Message */}
-                <div>
-                  <label className="block text-xs tracking-wide uppercase text-black/50 mb-2">
-                    Message*
-                  </label>
-                  <textarea
-                    required
-                    rows={5}
-                    placeholder="Tell us how we can help…"
-                    className="w-full rounded-xl border border-black/10 px-4 py-4 text-sm outline-none focus:border-[#5f3b86] resize-none"
-                  />
-                </div>
+          <Metric
+            value={8}
+            suffix="+"
+            label="Cities & Markets Reached"
+          />
 
-                {/* Newsletter */}
-                <label className="flex items-start gap-3 text-sm text-black/60">
-                  <input
-                    type="checkbox"
-                    className="mt-1 h-4 w-4 accent-[#5f3b86]"
-                  />
-                  <span>
-                    Sign up for our email list for updates, promotions, and more.
-                  </span>
-                </label>
+          <Metric
+            value={12}
+            suffix="+"
+            label="Strategic Partnerships"
+          />
 
-                {/* Submit */}
-                <div className="pt-4">
-                  <button
-                    type="submit"
-                    className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl text-xs tracking-[0.3em] uppercase font-medium transition-all group bg-[#5f3b86] text-white hover:opacity-90"
-                  >
-                    Send
-                    <Send
-                      size={16}
-                      className="transition-transform group-hover:translate-x-1"
-                    />
-                  </button>
-                </div>
-              </div>
-            </form>
-          </motion.div>
         </div>
       </div>
     </section>
-  );
+  )
+}
+
+function Metric({
+  value,
+  suffix,
+  label
+}: {
+  value: number
+  suffix?: string
+  label: string
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1.2 }}
+      className="group"
+    >
+      <div className="text-4xl md:text-5xl font-light text-[#141414] mb-3">
+        <Counter value={value} />
+        <span>{suffix}</span>
+      </div>
+
+      <div className="h-px w-10 bg-[#C2A45D]/50 mb-4 group-hover:w-16 transition-all duration-500" />
+
+      <p className="text-sm uppercase tracking-widest text-neutral-500">
+        {label}
+      </p>
+    </motion.div>
+  )
 }

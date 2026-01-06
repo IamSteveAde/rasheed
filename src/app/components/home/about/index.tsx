@@ -1,120 +1,65 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
-import {
-  HeartHandshake,
-  Users,
-  CalendarDays,
-  ArrowRight,
-} from "lucide-react";
+import { motion } from 'framer-motion'
 
-const actions = [
-  {
-    title: "Donate Today",
-    headline: "Support Digital Inclusion Initiative",
-    description:
-      "Your donation today could help transform someone’s life through digital access, skills, and opportunity. Together, we can fix the digital divide — for good.",
-    cta: "Donate Now",
-    href: "/donate",
-    icon: HeartHandshake,
-    accent: "#61abbb",
-  },
-  {
-    title: "Volunteer",
-    headline: "Volunteer with Digital Inclusion Initiative",
-    description:
-      "Join our team of volunteers and make a difference in your community. Whether it’s a few hours a week or a few hours a month, your time and skills matter.",
-    cta: "Become a Volunteer",
-    href: "/volunteer",
-    icon: Users,
-    accent: "#5f3b86",
-  },
-  {
-    title: "Events",
-    headline: "Attend Our Events",
-    description:
-      "We host fundraisers, community outreach programs, and educational seminars throughout the year. Stay engaged and be part of the movement.",
-    cta: "View Events",
-    href: "/events",
-    icon: CalendarDays,
-    accent: "#bcc8d7",
-  },
-];
-
-export default function SupportSection() {
+export default function PositioningSection() {
   return (
-    <section className="relative bg-white py-32">
-      <div className="container mx-auto px-6 lg:max-w-screen-xl">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-20">
-          <span className="block text-[11px] tracking-[0.45em] uppercase text-black/40 mb-4">
-            Get Involved
-          </span>
-          <h2 className="text-4xl md:text-5xl font-light leading-tight text-black">
-            Support Digital Inclusion Initiative Today
-          </h2>
-          <p className="mt-6 text-black/60 max-w-xl leading-relaxed">
-            Do a good thing today. Your support helps expand access, build skills,
-            and unlock opportunities through digital inclusion.
+    <section className="relative bg-white py-32" id='abouts'>
+      <div className="max-w-5xl mx-auto px-6 text-center">
+
+        {/* Heritage divider */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2 }}
+          className="mx-auto mb-10 h-px w-24 bg-[#C2A45D]/60"
+        />
+
+        {/* Title */}
+        <motion.h2
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.4, ease: 'easeOut' }}
+          className="text-sm uppercase tracking-[0.3em] text-neutral-500 mb-10"
+        >
+          Position & Purpose
+        </motion.h2>
+
+        {/* Main statement */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.6, delay: 0.2 }}
+          className="text-2xl md:text-3xl font-light text-[#141414] leading-relaxed max-w-3xl mx-auto"
+        >
+          Influence is not defined by volume, but by intention.
+        </motion.p>
+
+        {/* Supporting copy */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.6, delay: 0.4 }}
+          className="mt-10 max-w-2xl mx-auto text-[#5A5A5A] leading-relaxed"
+        >
+          <p className="mb-6">
+            Jubril Okoya represents a generation shaped by heritage and guided by
+            discipline — one that understands that legacy is built through
+            restraint, clarity, and long-term thinking.
           </p>
-        </div>
 
-        {/* Action Cards */}
-        <div className="grid gap-10 md:grid-cols-3">
-          {actions.map((item, index) => {
-            const Icon = item.icon;
-
-            return (
-              <motion.div
-                key={index}
-                whileHover={{ y: -6 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                className="relative rounded-3xl p-10 border border-black/5 bg-white shadow-[0_30px_80px_rgba(0,0,0,0.06)] overflow-hidden"
-              >
-                {/* Accent Glow */}
-                <div
-                  className="absolute -top-24 -right-24 h-64 w-64 rounded-full blur-3xl opacity-30"
-                  style={{ backgroundColor: item.accent }}
-                />
-
-                {/* Icon */}
-                <div
-                  className="flex h-12 w-12 items-center justify-center rounded-xl mb-8"
-                  style={{ backgroundColor: `${item.accent}22` }}
-                >
-                  <Icon size={22} style={{ color: item.accent }} />
-                </div>
-
-                {/* Text */}
-                <span className="block text-[11px] tracking-[0.35em] uppercase text-black/40 mb-3">
-                  {item.title}
-                </span>
-
-                <h3 className="text-xl font-medium text-black mb-4 leading-snug">
-                  {item.headline}
-                </h3>
-
-                <p className="text-black/60 leading-relaxed mb-8">
-                  {item.description}
-                </p>
-
-                {/* CTA */}
-                <a
-                  href={item.href}
-                  className="inline-flex items-center gap-3 text-xs tracking-[0.25em] uppercase font-medium transition-all group"
-                  style={{ color: item.accent }}
-                >
-                  {item.cta}
-                  <ArrowRight
-                    size={16}
-                    className="transition-transform group-hover:translate-x-1"
-                  />
-                </a>
-              </motion.div>
-            );
-          })}
-        </div>
+          <p>
+            His approach to leadership and enterprise is deliberate. Every
+            decision is measured against what endures, not what trends. This
+            philosophy informs how he engages with business, public presence, and
+            responsibility — quietly, thoughtfully, and with purpose.
+          </p>
+        </motion.div>
       </div>
     </section>
-  );
+  )
 }

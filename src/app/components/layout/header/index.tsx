@@ -1,42 +1,42 @@
-"use client";
+'use client'
 
-import Link from "next/link";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import Link from 'next/link'
+import Image from 'next/image'
+import { useEffect, useState } from 'react'
+import { Menu, X } from 'lucide-react'
 
 export default function Header() {
-  const [onDark, setOnDark] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [onDark, setOnDark] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   /* --------------------------------------------------
      Detect dark sections
   -------------------------------------------------- */
   useEffect(() => {
     const sections =
-      document.querySelectorAll<HTMLElement>("section[data-dark]");
-    if (!sections.length) return;
+      document.querySelectorAll<HTMLElement>('section[data-dark]')
+    if (!sections.length) return
 
     const observer = new IntersectionObserver(
       (entries) => {
-        setOnDark(entries.some((entry) => entry.isIntersecting));
+        setOnDark(entries.some((entry) => entry.isIntersecting))
       },
       {
-        rootMargin: "-80px 0px -70% 0px",
+        rootMargin: '-80px 0px -70% 0px',
         threshold: 0,
       }
-    );
+    )
 
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, []);
+    sections.forEach((section) => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
 
   /* --------------------------------------------------
      Lock scroll on mobile menu
   -------------------------------------------------- */
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
-  }, [menuOpen]);
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+  }, [menuOpen])
 
   return (
     <>
@@ -47,37 +47,48 @@ export default function Header() {
           backdrop-blur-xl
           bg-white/80
           transition-colors duration-300
-          ${onDark ? "text-white" : "text-black"}
+          ${onDark ? 'text-white' : 'text-black'}
         `}
       >
         <div className="container mx-auto px-6 lg:max-w-screen-xl">
           <div className="flex items-center justify-between h-20">
-            {/* LOGO */}
-            <Link href="/" className="z-50 flex items-center">
-              <Image
-                src="/images/logo/dlogo.svg"
-                alt="Digital Inclusion Initiative"
-                width={120}
-                height={32}
-                className={`transition-opacity ${
-                  onDark ? "invert brightness-200" : ""
-                }`}
-                priority
-              />
-            </Link>
+            {/* LOGO / WORDMARK */}
+<Link href="/" className="z-50 flex items-center">
+  <span
+    className={`
+      text-[15px] md:text-[16px]
+      tracking-[0.25em]
+      uppercase
+      font-light
+      transition-colors duration-300
+      ${onDark ? 'text-white' : 'text-[#141414]'}
+    `}
+  >
+    Jubril
+    <span
+      className={`
+        ml-1
+        ${onDark ? 'text-[#C2A45D]' : 'text-[#C2A45D]'}
+      `}
+    >
+      Okoya
+    </span>
+  </span>
+</Link>
+
 
             {/* DESKTOP NAV */}
-            <nav className="hidden md:flex items-center gap-10">
-              <NavItem onDark={onDark} href="/about">About</NavItem>
-              <NavItem onDark={onDark} href="/donate">Donate</NavItem>
-              <NavItem onDark={onDark} href="/partner">Partner</NavItem>
-              <NavItem onDark={onDark} href="/blog">Blog and Case Studies</NavItem>
-              <NavItem onDark={onDark} href="/services">Our Services</NavItem>
+            <nav className="hidden md:flex items-center gap-12">
+              <NavItem onDark={onDark} href="#abouts">About</NavItem>
+              <NavItem onDark={onDark} href="#vision">Vision & Legacy</NavItem>
+              <NavItem onDark={onDark} href="#ventures">Ventures</NavItem>
+              <NavItem onDark={onDark} href="#impact">Impact</NavItem>
+              <NavItem onDark={onDark} href="#enquiries">Private Enquiries</NavItem>
             </nav>
 
-            {/* MOBILE TOGGLE BUTTON */}
+            {/* MOBILE TOGGLE */}
             <button
-              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               onClick={() => setMenuOpen((prev) => !prev)}
               className="
                 md:hidden z-50
@@ -101,38 +112,38 @@ export default function Header() {
       {menuOpen && (
         <div className="fixed inset-0 z-40 bg-black/90 backdrop-blur-2xl">
           <nav className="h-full flex flex-col items-center justify-center">
-            <MobileNavItem delay={0} href="/about" onClick={() => setMenuOpen(false)}>
-              About Us
+            <MobileNavItem delay={0} href="#abouts" onClick={() => setMenuOpen(false)}>
+              About
             </MobileNavItem>
 
             <Divider />
 
-            <MobileNavItem delay={1} href="/donate" onClick={() => setMenuOpen(false)}>
-              Donate
+            <MobileNavItem delay={1} href="#vision" onClick={() => setMenuOpen(false)}>
+              Vision & Legacy
             </MobileNavItem>
 
             <Divider />
 
-            <MobileNavItem delay={2} href="/partner" onClick={() => setMenuOpen(false)}>
-              PARTNER
+            <MobileNavItem delay={2} href="#ventures" onClick={() => setMenuOpen(false)}>
+              Ventures
             </MobileNavItem>
 
             <Divider />
 
-            <MobileNavItem delay={3} href="/blog" onClick={() => setMenuOpen(false)}>
-              BLOGS & CASE STUDIES
+            <MobileNavItem delay={3} href="#impact" onClick={() => setMenuOpen(false)}>
+              Impact
             </MobileNavItem>
 
             <Divider />
 
-            <MobileNavItem delay={4} href="/services" onClick={() => setMenuOpen(false)}>
-              OUR SERVICES
+            <MobileNavItem delay={4} href="#enquiries" onClick={() => setMenuOpen(false)}>
+              Private Enquiries
             </MobileNavItem>
           </nav>
         </div>
       )}
     </>
-  );
+  )
 }
 
 /* ======================================================
@@ -143,17 +154,21 @@ function NavItem({
   children,
   onDark,
 }: {
-  href: string;
-  children: React.ReactNode;
-  onDark: boolean;
+  href: string
+  children: React.ReactNode
+  onDark: boolean
 }) {
   const className = `
-    text-[11px] tracking-[0.3em] uppercase
+    text-[11px] tracking-[0.32em] uppercase
     transition-colors duration-300
-    ${onDark ? "text-white/90 hover:text-white" : "text-black/85 hover:text-black"}
-  `;
+    ${onDark ? 'text-white/90 hover:text-white' : 'text-black/80 hover:text-black'}
+  `
 
-  return <Link href={href} className={className}>{children}</Link>;
+  return (
+    <Link href={href} className={className}>
+      {children}
+    </Link>
+  )
 }
 
 /* ======================================================
@@ -165,10 +180,10 @@ function MobileNavItem({
   onClick,
   delay = 0,
 }: {
-  href: string;
-  children: React.ReactNode;
-  onClick: () => void;
-  delay?: number;
+  href: string
+  children: React.ReactNode
+  onClick: () => void
+  delay?: number
 }) {
   return (
     <Link
@@ -186,7 +201,7 @@ function MobileNavItem({
     >
       {children}
     </Link>
-  );
+  )
 }
 
 /* ======================================================
@@ -195,5 +210,5 @@ function MobileNavItem({
 function Divider() {
   return (
     <div className="w-32 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-  );
+  )
 }

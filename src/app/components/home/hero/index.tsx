@@ -1,240 +1,108 @@
-"use client";
+'use client'
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import { motion, AnimatePresence, Variants } from "framer-motion";
-import {
-  ArrowRight,
-  ArrowLeft,
-  Wifi,
-  GraduationCap,
-  Briefcase,
-} from "lucide-react";
-import { getImgPath } from "@/utils/pathUtils";
+import { motion, AnimatePresence } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
-/* -------------------------------------
-   BRAND COLORS
-------------------------------------- */
-const BRAND = {
-  teal: "#61abbb",
-  purple: "#5f3b86",
-  mist: "#bcc8d7",
-};
+const hooks = [
+  'Crafting a legacy of intentional influence.',
+  'Where thoughtful leadership meets purposeful enterprise.',
+  'Shaping impact with clarity, integrity, and long-term vision.'
+]
 
-/* -------------------------------------
-   EASING (STRICTLY TYPED — FIXES TS ERROR)
-------------------------------------- */
-const easeEditorial: [number, number, number, number] = [0.22, 1, 0.36, 1];
-
-/* -------------------------------------
-   SLIDES
-------------------------------------- */
-const slides = [
-  {
-    title: "Digital Access",
-    headline: "Technology for everyone.",
-    description:
-      "We work to ensure communities are not excluded from the digital world because of location, income, or circumstance.",
-    image: "/images/hero/every.png",
-    icon: Wifi,
-    accent: BRAND.teal,
-  },
-  {
-    title: "Digital Skills",
-    headline: "Skills that unlock futures.",
-    description:
-      "Through mentorship, training, and education, we empower people with skills needed to thrive in a digital economy.",
-    image: "/images/hero/tutor.png",
-    icon: GraduationCap,
-    accent: BRAND.purple,
-  },
-  {
-    title: "Digital Opportunity",
-    headline: "Inclusion creates opportunity.",
-    description:
-      "Access and skills lead to jobs, innovation, and economic participation across Africa.",
-    image: "/images/hero/access.png",
-    icon: Briefcase,
-    accent: BRAND.teal,
-  },
-];
-
-/* -------------------------------------
-   VARIANTS (TYPE-SAFE)
-------------------------------------- */
-const fade: Variants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
-  exit: { opacity: 0 },
-};
-
-const content: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 28,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.9,
-      ease: easeEditorial,
-    },
-  },
-};
-
-export default function Hero() {
-  const [index, setIndex] = useState(0);
-
-  const next = () => setIndex((i) => (i + 1) % slides.length);
-  const prev = () =>
-    setIndex((i) => (i - 1 + slides.length) % slides.length);
+export default function HomeHero() {
+  const [current, setCurrent] = useState(0)
 
   useEffect(() => {
-    const timer = setInterval(next, 8000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const slide = slides[index];
-  const Icon = slide.icon;
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % hooks.length)
+    }, 5200)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
-    <section className="relative h-screen w-full overflow-hidden group">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={index}
-          variants={fade}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-          transition={{ duration: 1.1, ease: "easeInOut" }}
-          className="absolute inset-0"
-        >
-          {/* Background Image */}
-          <Image
-            src={getImgPath(slide.image)}
-            alt={slide.title}
-            fill
-            priority
-            className="object-cover"
-          />
+    <section className="relative min-h-screen bg-white flex items-center overflow-hidden">
 
-          {/* Brand Overlay */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background: `linear-gradient(
-                120deg,
-                rgba(0,0,0,0.78),
-                ${slide.accent}55
-              )`,
-            }}
-          />
+      {/* Luxury ambient background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(194,164,93,0.08),transparent_45%)]" />
+        <div className="absolute bottom-0 right-0 w-[420px] h-[420px] bg-[radial-gradient(circle,rgba(20,20,20,0.04),transparent_70%)]" />
+      </div>
 
-          {/* Content */}
-          <div className="relative z-10 h-full flex items-center">
-            <div className="container mx-auto px-6 lg:max-w-screen-xl">
-              <motion.div
-                variants={content}
-                initial="hidden"
-                animate="visible"
-                className="max-w-2xl space-y-6"
+      <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+
+        {/* LEFT: TEXT */}
+        <div className="relative">
+
+          {/* Subtle vertical luxury line */}
+          <div className="absolute -left-6 top-2 h-16 w-px bg-[#C2A45D]/40 hidden md:block" />
+
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.6, ease: 'easeOut' }}
+            className="text-4xl md:text-5xl font-light tracking-tight text-[#141414]"
+          >
+            Jubril Okoya
+          </motion.h1>
+
+          <div className="mt-6 h-[76px]">
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={current}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1.3, ease: 'easeInOut' }}
+                className="text-lg md:text-xl text-[#5A5A5A] max-w-xl leading-relaxed"
               >
-                {/* Eyebrow */}
-                <div className="flex items-center gap-3 text-white/80">
-                  <Icon size={20} />
-                  <span className="text-[11px] tracking-[0.4em] uppercase">
-                    {slide.title}
-                  </span>
-                </div>
+                {hooks[current]}
+              </motion.p>
+            </AnimatePresence>
+          </div>
 
-                {/* H1 — WHITE + PURPLE */}
-                <h1 className="text-4xl md:text-6xl font-light leading-tight">
-                  <span className="text-white"> {slide.headline.split(" ")[0]} </span>
-                  <span
-                    className="bg-clip-text text-transparent"
-                    style={{
-                      backgroundImage: `linear-gradient(90deg, #ffffff, ${BRAND.purple})`,
-                    }}
-                  >
-                    {" " + slide.headline.split(" ").slice(1).join(" ")}
-                  </span>
-                </h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.6, delay: 0.5 }}
+            className="mt-10 text-xs uppercase tracking-[0.25em] text-[#7A7A7A]"
+          >
+            Entrepreneur · Visionary Leader · Legacy Builder
+          </motion.p>
 
-                <p className="text-white/80 max-w-lg leading-relaxed">
-                  {slide.description}
-                </p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.6, delay: 0.8 }}
+            className="mt-6 text-[#6A6A6A] max-w-lg leading-relaxed"
+          >
+            A life shaped by heritage, refined through purpose —
+            a legacy in motion, guided by restraint, clarity,
+            and long-term vision.
+          </motion.p>
+        </div>
 
-                <div className="pt-6">
-                  <a
-                    href="/about"
-                    className="inline-flex items-center gap-3 px-8 py-4 rounded-xl text-xs tracking-[0.25em] uppercase transition-all hover:opacity-90"
-                    style={{
-                      backgroundColor: BRAND.purple,
-                      color: "#fff",
-                    }}
-                  >
-                    Learn More
-                    <ArrowRight size={16} />
-                  </a>
-                </div>
-              </motion.div>
-            </div>
+        {/* RIGHT: IMAGE */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2.0, ease: 'easeOut' }}
+          className="relative w-full h-[540px]"
+        >
+          {/* Soft gold frame glow */}
+          <div className="absolute -inset-3 rounded-3xl bg-[#C2A45D]/10 blur-2xl" />
+
+          <div className="relative w-full h-full rounded-2xl overflow-hidden bg-neutral-100">
+            <Image
+              src="/images/hero/jubril.jpg"
+              alt="Jubril Okoya"
+              fill
+              priority
+              className="object-cover grayscale-[3%]"
+            />
           </div>
         </motion.div>
-      </AnimatePresence>
-
-      {/* ================= DESKTOP ARROWS ================= */}
-<div className="absolute inset-y-0 w-full hidden md:flex items-center justify-between px-6 z-20">
-  <button
-    onClick={prev}
-    aria-label="Previous slide"
-    className="h-12 w-12 rounded-full bg-white/10 backdrop-blur text-white flex items-center justify-center hover:bg-white hover:text-black transition-all"
-  >
-    <ArrowLeft size={20} />
-  </button>
-
-  <button
-    onClick={next}
-    aria-label="Next slide"
-    className="h-12 w-12 rounded-full bg-white/10 backdrop-blur text-white flex items-center justify-center hover:bg-white hover:text-black transition-all"
-  >
-    <ArrowRight size={20} />
-  </button>
-</div>
-
-{/* ================= MOBILE ARROWS ================= */}
-<div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex md:hidden items-center gap-6 z-20">
-  <button
-    onClick={prev}
-    aria-label="Previous slide"
-    className="h-11 w-11 rounded-full bg-white/15 backdrop-blur text-white flex items-center justify-center active:scale-95 transition"
-  >
-    <ArrowLeft size={18} />
-  </button>
-
-  <button
-    onClick={next}
-    aria-label="Next slide"
-    className="h-11 w-11 rounded-full bg-white/15 backdrop-blur text-white flex items-center justify-center active:scale-95 transition"
-  >
-    <ArrowRight size={18} />
-  </button>
-</div>
-
-
-      {/* Progress Bars */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-4 z-20">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setIndex(i)}
-            className={`h-[3px] w-10 transition-all ${
-              i === index ? "bg-white" : "bg-white/30"
-            }`}
-          />
-        ))}
       </div>
     </section>
-  );
+  )
 }

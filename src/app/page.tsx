@@ -6,6 +6,9 @@ import About from "./components/home/about";
 import DiscoverProperties from "./components/home/property-option"; // mentor section
 import Listing from "./components/home/property-list";
 import Testimonials from "./components/home/testimonial";
+import Philanthropy from "./components/home/philanthropy";
+import Perspective from "./components/home/perspective";
+import Enquire from "./components/home/enquiries";
 
 
 // Global components
@@ -89,6 +92,9 @@ export default function Home() {
 
       {/* Social proof */}
       <Testimonials />
+      <Philanthropy />
+      <Perspective />
+       <Enquire />
     </main>
   );
 }
