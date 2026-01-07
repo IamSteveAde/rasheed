@@ -3,65 +3,58 @@ import { Metadata } from "next";
 // Home sections
 import Hero from "./components/home/hero";
 import About from "./components/home/about";
-import DiscoverProperties from "./components/home/property-option"; // mentor section
+import DiscoverProperties from "./components/home/property-option";
 import Listing from "./components/home/property-list";
 import Testimonials from "./components/home/testimonial";
 import Philanthropy from "./components/home/philanthropy";
 import Perspective from "./components/home/perspective";
 import Enquire from "./components/home/enquiries";
 
-
-// Global components
-
-
 export const metadata: Metadata = {
-  metadataBase: new URL("https://digitalinclusioninitiative.org"),
+  metadataBase: new URL("https://jubrilokoya.com"),
 
   title: {
-    default: "Digital Inclusion Initiative",
-    template: "%s | Digital Inclusion Initiative",
+    default: "Jubril Okoya",
+    template: "%s | Jubril Okoya",
   },
 
   description:
-    "Digital Inclusion Initiative works to expand digital access, build skills, and create economic opportunities for women and underserved communities through technology.",
+    "The private website of Jubril Okoya — offering insight into his work, perspectives, initiatives, and long-term interests.",
 
   keywords: [
-    "digital inclusion",
-    "digital access",
-    "technology for social impact",
-    "women in technology",
-    "digital skills training",
-    "underserved communities",
-    "tech education Africa",
-    "digital divide",
-    "Digital Inclusion Initiative",
+    "Jubril Okoya",
+    "private portfolio",
+    "business perspective",
+    "philanthropy",
+    "investments",
+    "leadership",
+    "long-term thinking",
+    "private initiatives",
   ],
 
   openGraph: {
-    title: "Digital Inclusion Initiative",
+    title: "Jubril Okoya",
     description:
-      "Expanding digital access, building skills, and creating opportunities for women and underserved communities.",
-    url: "https://digitalinclusioninitiative.org",
-    siteName: "Digital Inclusion Initiative",
+      "A private introduction to the work, initiatives, and perspectives of Jubril Okoya.",
+    url: "https://jubrilokoya.com",
+    siteName: "Jubril Okoya",
     type: "website",
     images: [
       {
-        url: "https://digitalinclusioninitiative.org/og/og-cover.jpg",
+        url: "https://jubrilokoya.com/og/og-cover.jpg",
         width: 1200,
         height: 630,
-        alt: "Digital Inclusion Initiative — Bridging the Digital Divide",
+        alt: "Jubril Okoya — Perspective, Purpose, Legacy",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Digital Inclusion Initiative",
+    title: "Jubril Okoya",
     description:
-      "Bridging the digital divide through access, skills, and opportunity.",
-    images: [
-      "https://digitalinclusioninitiative.org/og/og-cover.jpg",
-    ],
+      "Perspective, purpose, and long-term initiatives.",
+    images: ["https://jubrilokoya.com/og/og-cover.jpg"],
   },
 
   robots: {
@@ -70,31 +63,36 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://digitalinclusioninitiative.org",
+    canonical: "https://jubrilokoya.com",
   },
 };
 
 export default function Home() {
   return (
     <main>
-      {/* Audio welcome — plays once per visit */}
-   
+      {/* Audio welcome — subtle, optional */}
 
       {/* Core sections */}
       <Hero />
       <About />
 
-      {/* Mentor / Opportunity / Engagement section */}
+      {/* Focus areas / initiatives */}
       <DiscoverProperties />
 
-      {/* Impact, listings, or programs */}
+      {/* Selected engagements or highlights */}
       <Listing />
 
-      {/* Social proof */}
+      {/* Reputation & social proof */}
       <Testimonials />
+
+      {/* Long-term impact */}
       <Philanthropy />
+
+      {/* Thought & perspective */}
       <Perspective />
-       <Enquire />
+
+      {/* Private enquiries */}
+      <Enquire />
     </main>
   );
 }
