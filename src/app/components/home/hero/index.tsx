@@ -41,7 +41,7 @@ export default function HomeHero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.6, ease: 'easeOut' }}
-            className="text-4xl md:text-5xl font-light tracking-tight text-[#141414]"
+            className="text-4xl py-14 md:text-5xl font-light tracking-tight text-[#141414]"
           >
             Jubril Okoya
           </motion.h1>
