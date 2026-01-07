@@ -57,7 +57,7 @@ export default function RootLayout({
             
 
             {/* Global Chat Widget */}
-           
+            
           </ThemeProvider>
         </AppContextProvider>
       </body>
