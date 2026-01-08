@@ -25,20 +25,20 @@ export default function Footer() {
                 text-white
               "
             >
-              Jubril <span className="text-[#C2A45D]">Okoya</span>
+              Rasheed <span className="text-[#C2A45D]">Kashamu</span>
             </span>
 
             <p className="text-white/60 text-sm leading-relaxed max-w-sm">
-              A personal archive reflecting values, perspective, and long-term
-              intent — shaped by discipline, responsibility, and legacy-driven
-              thinking.
+              A private record of public service, professional engagement,
+              and long-term perspective — grounded in responsibility,
+              discipline, and continuity.
             </p>
           </div>
 
           {/* CENTER — NAVIGATION */}
           <div className="md:col-span-4 space-y-6">
             <span className="block text-[11px] tracking-[0.3em] uppercase text-white/40">
-              Explore
+              Sections
             </span>
 
             <ul className="space-y-3 text-sm">
@@ -63,7 +63,7 @@ export default function Footer() {
                   href="#ventures"
                   className="text-white/70 hover:text-white transition"
                 >
-                  Ventures
+                  Focus & Engagements
                 </Link>
               </li>
               <li>
@@ -71,7 +71,7 @@ export default function Footer() {
                   href="#impact"
                   className="text-white/70 hover:text-white transition"
                 >
-                  Impact
+                  Measured Impact
                 </Link>
               </li>
               <li>
@@ -88,24 +88,24 @@ export default function Footer() {
           {/* RIGHT — STATEMENT */}
           <div className="md:col-span-4 space-y-6">
             <span className="block text-[11px] tracking-[0.3em] uppercase text-white/40">
-              Perspective
+              Context
             </span>
 
             <p className="text-white/65 text-sm leading-relaxed max-w-sm">
-              This platform exists to shape understanding, preserve intent, and
-              provide quiet clarity — not to seek attention, but to define it
-              deliberately.
+              This platform is intended to provide clarity, context, and
+              perspective. It is not a campaign instrument, nor a commercial
+              solicitation, but a record of intent and direction.
             </p>
 
             <span className="inline-block text-[11px] tracking-[0.3em] uppercase text-white/50 border-b border-[#C2A45D]/40 pb-1">
-              By intention
+              With intention
             </span>
           </div>
         </div>
 
         {/* BOTTOM LINE */}
         <div className="mt-24 text-center text-white/35 text-xs tracking-wide">
-          © {new Date().getFullYear()} Jubril Okoya. All rights reserved.
+          © {new Date().getFullYear()} Rasheed Kashamu. All rights reserved.
         </div>
 
       </div>

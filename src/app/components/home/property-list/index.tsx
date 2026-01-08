@@ -4,30 +4,30 @@ import { motion } from 'framer-motion'
 
 const ventures = [
   {
-    title: 'Real Estate & Development',
+    title: 'Public Service & Governance',
     description:
-      'Thoughtfully planned developments focused on quality, sustainability, and long-term value.'
+      'Active engagement in legislative work, policy oversight, and constituency representation as a Member of the Ogun State House of Assembly, with a focus on governance, accountability, and community development.'
   },
   {
     title: 'Private Enterprise',
     description:
-      'Strategic involvement in businesses where governance, discipline, and execution matter.'
+      'Involvement in privately held businesses, applying principles of structure, governance, and disciplined execution informed by both local and international exposure.'
   },
   {
-    title: 'Long-Term Investments',
+    title: 'Real Estate & Property Interests',
     description:
-      'A patient approach to capital, prioritising resilience and enduring relevance.'
+      'Participation in property-related ventures with an emphasis on long-term value, responsible development, and practical utility rather than speculative activity.'
   },
   {
-    title: 'Strategic Interests',
+    title: 'Long-Term Economic Interests',
     description:
-      'Ongoing exploration of opportunities aligned with innovation, infrastructure, and impact.'
+      'A measured approach to capital and opportunity, prioritising sustainability, continuity, and initiatives that contribute to economic participation and resilience.'
   }
 ]
 
 export default function VenturesSection() {
   return (
-    <section className="relative bg-white py-36" id='ventures'>
+    <section className="relative bg-white py-36" id="ventures">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Section Header */}
@@ -49,8 +49,8 @@ export default function VenturesSection() {
             transition={{ duration: 1.4 }}
             className="text-3xl md:text-4xl font-light text-[#141414] leading-relaxed mb-6"
           >
-            Enterprise, when approached thoughtfully,
-            becomes a long-term instrument for impact.
+            Responsibility in public life and discipline in enterprise
+            require clarity of purpose and long-term thinking.
           </motion.h3>
 
           <motion.p
@@ -60,10 +60,11 @@ export default function VenturesSection() {
             transition={{ duration: 1.4, delay: 0.2 }}
             className="text-[#5A5A5A] max-w-2xl leading-relaxed"
           >
-            Jubril Okoya is selectively involved in ventures that align with his
-            values of quality, longevity, and disciplined growth. His business
-            interests are guided by patience, structure, and an emphasis on
-            building things that endure beyond cycles and trends.
+            Rasheed Kashamu’s areas of focus span public service and private
+            enterprise. Across both spheres, his involvement is shaped by an
+            understanding that credibility, sustainability, and impact are
+            built through consistency, structure, and measured decision-making
+            rather than short-term visibility.
           </motion.p>
         </div>
 
@@ -78,7 +79,7 @@ export default function VenturesSection() {
               transition={{ duration: 1.2, delay: index * 0.1 }}
               className="relative p-10 border border-neutral-200 rounded-2xl hover:shadow-[0_30px_80px_-40px_rgba(0,0,0,0.15)] transition-all duration-500"
             >
-              {/* subtle accent line */}
+              {/* Subtle accent line */}
               <div className="absolute top-0 left-10 w-12 h-px bg-[#C2A45D]/60" />
 
               <h4 className="text-xl font-light text-[#141414] mb-4">

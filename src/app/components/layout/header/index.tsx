@@ -64,14 +64,14 @@ export default function Header() {
       ${onDark ? 'text-white' : 'text-[#141414]'}
     `}
   >
-    Jubril
+    Rasheed
     <span
       className={`
         ml-1
         ${onDark ? 'text-[#C2A45D]' : 'text-[#C2A45D]'}
       `}
     >
-      Okoya
+      Kashamu
     </span>
   </span>
 </Link>

@@ -27,9 +27,9 @@ function Counter({ value }: { value: number }) {
 
 export default function ImpactNumbersSection() {
   return (
-    <section className="relative bg-[#FAFAFA] py-36 overflow-hidden" id='impact'>
+    <section className="relative bg-[#FAFAFA] py-36 overflow-hidden" id="impact">
 
-      {/* subtle ambient depth */}
+      {/* Subtle ambient depth */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(194,164,93,0.06),transparent_45%)]" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
@@ -53,37 +53,37 @@ export default function ImpactNumbersSection() {
             transition={{ duration: 1.4 }}
             className="text-3xl md:text-4xl font-light text-[#141414] leading-relaxed"
           >
-            Impact is not claimed.  
+            Impact is not announced.  
             <br />
-            It is demonstrated — quietly, over time.
+            It is earned through consistency and responsibility.
           </motion.h3>
         </div>
 
         {/* Metrics */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
-          
-          <Metric
-            value={10}
-            suffix="+"
-            label="Years of Active Focus"
-          />
 
           <Metric
             value={5}
             suffix="+"
-            label="Business Ventures Engaged"
+            label="Years of Public & Professional Engagement"
           />
 
           <Metric
-            value={8}
-            suffix="+"
-            label="Cities & Markets Reached"
+            value={1}
+            suffix=""
+            label="Legislative Constituency Represented"
           />
 
           <Metric
-            value={12}
+            value={20}
             suffix="+"
-            label="Strategic Partnerships"
+            label="Community Initiatives & Interventions"
+          />
+
+          <Metric
+            value={10}
+            suffix="+"
+            label="Collaborations Across Public & Private Sectors"
           />
 
         </div>

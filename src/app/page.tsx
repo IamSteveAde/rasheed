@@ -11,50 +11,51 @@ import Perspective from "./components/home/perspective";
 import Enquire from "./components/home/enquiries";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jubrilokoya.com"),
+  metadataBase: new URL("https://rasheedkashamu.com"),
 
   title: {
-    default: "Jubril Okoya",
-    template: "%s | Jubril Okoya",
+    default: "Rasheed Kashamu",
+    template: "%s | Rasheed Kashamu",
   },
 
   description:
-    "The private website of Jubril Okoya — offering insight into his work, perspectives, initiatives, and long-term interests.",
+    "The private website of Rasheed Kashamu — offering insight into his work, perspectives, long-term interests, and areas of focus.",
 
   keywords: [
-    "Jubril Okoya",
+    "Rasheed Kashamu",
     "private portfolio",
-    "business perspective",
+    "business leadership",
+    "long-term investments",
+    "measured impact",
+    "strategic perspective",
     "philanthropy",
-    "investments",
-    "leadership",
-    "long-term thinking",
+    "legacy thinking",
     "private initiatives",
   ],
 
   openGraph: {
-    title: "Jubril Okoya",
+    title: "Rasheed Kashamu",
     description:
-      "A private introduction to the work, initiatives, and perspectives of Jubril Okoya.",
-    url: "https://jubrilokoya.com",
-    siteName: "Jubril Okoya",
+      "A private introduction to the work, perspectives, and long-term focus of Rasheed Kashamu.",
+    url: "https://rasheedkashamu.com",
+    siteName: "Rasheed Kashamu",
     type: "website",
     images: [
       {
-        url: "https://jubrilokoya.com/og/og-cover.jpg",
+        url: "https://rasheedkashamu.com/og/og-cover.jpg",
         width: 1200,
         height: 630,
-        alt: "Jubril Okoya — Perspective, Purpose, Legacy",
+        alt: "Rasheed Kashamu — Perspective, Discipline, Legacy",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Jubril Okoya",
+    title: "Rasheed Kashamu",
     description:
-      "Perspective, purpose, and long-term initiatives.",
-    images: ["https://jubrilokoya.com/og/og-cover.jpg"],
+      "Perspective, discipline, and long-term focus.",
+    images: ["https://rasheedkashamu.com/og/og-cover.jpg"],
   },
 
   robots: {
@@ -63,20 +64,18 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://jubrilokoya.com",
+    canonical: "https://rasheedkashamu.com",
   },
 };
 
 export default function Home() {
   return (
     <main>
-      {/* Audio welcome — subtle, optional */}
-
       {/* Core sections */}
       <Hero />
       <About />
 
-      {/* Focus areas / initiatives */}
+      {/* Areas of focus / initiatives */}
       <DiscoverProperties />
 
       {/* Selected engagements or highlights */}
@@ -85,7 +84,7 @@ export default function Home() {
       {/* Reputation & social proof */}
       <Testimonials />
 
-      {/* Long-term impact */}
+      {/* Long-term responsibility & contribution */}
       <Philanthropy />
 
       {/* Thought & perspective */}

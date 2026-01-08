@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 export default function VisionLegacySection() {
   return (
-    <section className="relative overflow-hidden bg-[#FAFAFA] py-40" id='vision'>
+    <section className="relative overflow-hidden bg-[#FAFAFA] py-40" id="vision">
 
       {/* ORBIT SYSTEM */}
       <div className="absolute inset-0 pointer-events-none">
@@ -33,7 +33,7 @@ export default function VisionLegacySection() {
           className="absolute top-1/2 left-1/2 w-[1200px] h-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#C2A45D]/15"
         />
 
-        {/* Orbit 3 (broken / partial) */}
+        {/* Orbit 3 */}
         <motion.div
           initial={{ rotate: 0 }}
           animate={{ rotate: -360 }}
@@ -71,10 +71,10 @@ export default function VisionLegacySection() {
           transition={{ duration: 1.6, ease: 'easeOut' }}
           className="text-3xl md:text-4xl font-light text-[#141414] leading-relaxed"
         >
-          Legacy is not something one inherits.  
+          Legacy is not declared.  
           <br />
-          It is something one{' '}
-          <span className="text-[#C2A45D]">proves over time</span>.
+          It is{' '}
+          <span className="text-[#C2A45D]">established through time</span>.
         </motion.h3>
 
         {/* Supporting text */}
@@ -86,14 +86,14 @@ export default function VisionLegacySection() {
           className="mt-14 text-[#5A5A5A] leading-relaxed max-w-2xl mx-auto"
         >
           <p className="mb-6">
-            Jubril Okoya approaches legacy as a responsibility — not to be rushed,
-            displayed, or diluted.
+            Rasheed Kashamu approaches legacy as a responsibility — one that
+            requires patience, restraint, and a clear sense of direction.
           </p>
 
           <p>
-            His vision is grounded in patience, long-term value, and the discipline
-            to think beyond the present moment. Influence, in his view, should
-            endure quietly and speak long after decisions are made.
+            His vision is shaped by long-term thinking and disciplined choices,
+            guided by the belief that influence should endure quietly and
+            reveal itself through outcomes, not announcements.
           </p>
         </motion.div>
       </div>

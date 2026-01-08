@@ -35,9 +35,9 @@ export default function PresencePerspectiveSection() {
           transition={{ duration: 1.6, ease: 'easeOut' }}
           className="text-3xl md:text-4xl font-light text-[#141414] leading-relaxed mb-12"
         >
-          Presence is not about being everywhere.  
+          Presence is not about being seen everywhere.  
           <br />
-          It is about being understood where it matters.
+          It is about being understood where it counts.
         </motion.h3>
 
         {/* Supporting copy */}
@@ -49,18 +49,19 @@ export default function PresencePerspectiveSection() {
           className="text-[#5A5A5A] leading-relaxed max-w-2xl mx-auto"
         >
           <p className="mb-6">
-            Jubril Okoya believes that clarity, restraint, and consistency define
-            how influence should be carried.
+            Rasheed Kashamu approaches influence with intention — guided by
+            clarity of thought, restraint in action, and consistency over time.
           </p>
 
           <p className="mb-6">
-            In a world driven by noise and immediacy, he chooses thoughtfulness
-            over visibility — allowing actions, values, and long-term decisions
-            to speak with quiet authority.
+            In an environment shaped by speed and spectacle, he remains
+            deliberate, allowing decisions, values, and long-term outcomes
+            to define his presence rather than constant visibility.
           </p>
 
           <p>
-            Perspective, for him, is shaped not by moments, but by years.
+            Perspective, for him, is earned through years of measured choices
+            and enduring commitments.
           </p>
         </motion.div>
       </div>

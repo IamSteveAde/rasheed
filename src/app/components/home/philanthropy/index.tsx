@@ -34,7 +34,7 @@ export default function PhilanthropyImpactSection() {
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <Image
           src="/images/hero/map.png"
-          alt="Global impact map"
+          alt="Global reach"
           width={1400}
           height={700}
           className="opacity-[0.07]"
@@ -66,9 +66,9 @@ export default function PhilanthropyImpactSection() {
             transition={{ duration: 1.4 }}
             className="text-3xl md:text-4xl font-light text-[#141414] leading-relaxed mb-6"
           >
-            Responsibility does not end with success.  
+            Responsibility does not end with achievement.  
             <br />
-            It expands with it.
+            It deepens with it.
           </motion.h3>
 
           <motion.p
@@ -78,18 +78,19 @@ export default function PhilanthropyImpactSection() {
             transition={{ duration: 1.4, delay: 0.2 }}
             className="text-[#5A5A5A] max-w-2xl leading-relaxed"
           >
-            A measured commitment to people, communities, and long-term uplift —
-            carried out quietly, consistently, and with intent.
+            A long-term commitment to people and communities — approached
+            with discretion, consistency, and an understanding that
+            meaningful impact is built over time.
           </motion.p>
         </div>
 
         {/* Impact Counters */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-16">
           
-          <ImpactMetric value={1200} suffix="+" label="Lives Touched" />
+          <ImpactMetric value={1200} suffix="+" label="Individuals Reached" />
           <ImpactMetric value={15} suffix="+" label="Communities Supported" />
-          <ImpactMetric value={25} suffix="+" label="Educational Initiatives Backed" />
-          <ImpactMetric value={8} suffix="+" label="Years of Sustained Giving" />
+          <ImpactMetric value={25} suffix="+" label="Educational Efforts Enabled" />
+          <ImpactMetric value={8} suffix="+" label="Years of Sustained Commitment" />
 
         </div>
       </div>

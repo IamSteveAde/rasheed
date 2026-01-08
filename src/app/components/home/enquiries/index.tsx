@@ -42,9 +42,9 @@ export default function PrivateEnquiriesSection() {
           transition={{ duration: 1.6, ease: 'easeOut' }}
           className="text-3xl md:text-4xl font-light text-[#141414] leading-relaxed mb-12"
         >
-          Access should be intentional.  
+          Access is intentional.  
           <br />
-          Conversations should have purpose.
+          Dialogue is purposeful.
         </motion.h3>
 
         {/* Supporting copy */}
@@ -55,10 +55,10 @@ export default function PrivateEnquiriesSection() {
           transition={{ duration: 1.6, delay: 0.3 }}
           className="text-[#5A5A5A] leading-relaxed max-w-xl mx-auto mb-16"
         >
-          This platform is not designed for general enquiries. Private
-          conversations are considered where there is clear alignment,
-          long-term intent, or meaningful relevance. All correspondence is
-          treated with discretion.
+          This platform is not intended for general correspondence.
+          Private discussions are considered where there is clear alignment,
+          long-term intent, or substantive relevance. All communication is
+          handled with discretion and respect for privacy.
         </motion.p>
 
         {/* Action */}
@@ -69,7 +69,7 @@ export default function PrivateEnquiriesSection() {
           transition={{ duration: 1.4, delay: 0.5 }}
         >
           <Link
-            href="mailto:private@jubrilokoya.com"
+            href="mailto:private@rasheedkashamu.com"
             className="
               inline-block
               px-10 py-4
